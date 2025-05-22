@@ -5,7 +5,7 @@
   "description": "A React-based UI library",
   "main": "dist/index.cjs",
   "module": "dist/index.es.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.es.js",
@@ -19,7 +19,7 @@
     }
   },
   "files": [
-    "dist"
+    "components"
   ],
   "scripts": {
     "build": "rollup -c"
