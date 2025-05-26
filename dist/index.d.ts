@@ -6,5 +6,15 @@ interface IButtonProps {
 }
 declare const Button: ({ children, ...props }: IButtonProps) => react_jsx_runtime.JSX.Element;
 
-export { Button };
-export type { IButtonProps };
+interface IInputProps {
+    value: string;
+}
+declare const Input: (props: IInputProps) => react_jsx_runtime.JSX.Element;
+
+interface ISearchProps {
+    value: string;
+}
+declare const Search: (props: ISearchProps) => react_jsx_runtime.JSX.Element;
+
+export { Button, Input, Search };
+export type { IButtonProps, IInputProps, ISearchProps };
