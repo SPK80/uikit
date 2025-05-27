@@ -1,6 +1,7 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
+import alias from "@rollup/plugin-alias";
 import postcss from "rollup-plugin-postcss";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import dts from "rollup-plugin-dts";
@@ -12,7 +13,7 @@ const getComponents = () => {
   return fs
     .readdirSync(componentsDir)
     .filter((file) =>
-      fs.statSync(path.join(componentsDir, file)).isDirectory(),
+      fs.statSync(path.join(componentsDir, file)).isDirectory()
     );
 };
 
@@ -41,7 +42,7 @@ const updateExports = () => {
   fs.writeFileSync(
     packageJsonPath,
     JSON.stringify(packageJson, null, 2),
-    "utf8",
+    "utf8"
   );
 
   console.log("Exports updated in package.json");
@@ -58,6 +59,18 @@ const createComponentConfig = (name) => {
       plugins: [
         peerDepsExternal(),
         typescript(),
+        alias({
+          entries: [
+            {
+              find: "@components",
+              replacement: path.resolve(".", "src/components"),
+            },
+            {
+              find: "@components/",
+              replacement: path.resolve(".", "src/components/"),
+            },
+          ],
+        }),
         resolve(),
         commonjs(),
         postcss({

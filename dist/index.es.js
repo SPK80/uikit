@@ -1,15 +1,26 @@
 import { jsx, jsxs } from 'react/jsx-runtime';
+import { Button as Button$1 } from 'antd';
+import styled from '@emotion/styled';
 
+const StyledButton = styled(Button$1) `
+  color: red;
+  font-size: 20px;
+`;
 const Button = ({ children, ...props }) => {
-    return (jsx("button", { ...props, children: children }));
+    return jsx(StyledButton, { ...props, children: children });
 };
 
-const Input = (props) => {
-    return (jsx("input", { ...props }));
+const Input = ({ value, onChange, ...rest }) => {
+    return (jsx("input", { value: value, onChange: (e) => onChange?.(e.currentTarget.value), ...rest }));
 };
 
-const Search = (props) => {
-    return (jsxs("div", { children: [jsx("span", { children: "\u041F\u043E\u0438\u0441\u043A" }), jsx(Input, { ...props })] }));
+const StyledTitle = styled.div `
+  color: red;
+  font-size: 20px;
+  margin-bottom: 10px;
+`;
+const Search = ({ title = "Поиск", ...rest }) => {
+    return (jsxs("div", { children: [jsx(StyledTitle, { children: title }), jsx(Input, { ...rest })] }));
 };
 
-export { Button, Input, Search };
+export { Button, Input, Search, StyledButton, StyledTitle };
