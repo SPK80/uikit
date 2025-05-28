@@ -3,15 +3,34 @@
   "version": "0.1.0",
   "license": "MIT",
   "description": "A React-based UI library",
+  "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
-  "exports": "./exports.json",
-  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./components/Button": {
+      "import": "./dist/components/Button.es.js",
+      "require": "./dist/components/Button.cjs",
+      "types": "./dist/components/Button.d.ts"
+    },
+    "./components/Input": {
+      "import": "./dist/components/Input.es.js",
+      "require": "./dist/components/Input.cjs",
+      "types": "./dist/components/Input.d.ts"
+    },
+    "./components/Search": {
+      "import": "./dist/components/Search.es.js",
+      "require": "./dist/components/Search.cjs",
+      "types": "./dist/components/Search.d.ts"
+    }
+  },
   "files": [
-    "dist",
-    "exports.json",
-    "README.md"
+    "components"
   ],
   "scripts": {
     "build": "rollup -c"
