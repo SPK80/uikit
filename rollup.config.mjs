@@ -19,8 +19,7 @@ const getComponents = () => {
 
 const components = getComponents();
 
-// обновляет exports в package.json
-const updateExports = () => {
+const updateExportsFile = () => {
   const exportsMap = {
     ".": {
       import: "./dist/index.es.js",
@@ -36,17 +35,46 @@ const updateExports = () => {
     };
   });
 
-  const packageJsonPath = path.resolve(".", "package.json");
-  let packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
-  packageJson.exports = exportsMap;
+  const exportsJsonPath = path.resolve(".", "exports.json");
+  // let exportsJson = JSON.parse(fs.readFileSync(exportsJsonPath, "utf8"));
+  const exportsJson = exportsMap;
   fs.writeFileSync(
-    packageJsonPath,
-    JSON.stringify(packageJson, null, 2),
+    exportsJsonPath,
+    JSON.stringify(exportsJson, null, 2),
     "utf8"
   );
 
-  console.log("Exports updated in package.json");
+  console.log("exports.json updated");
 };
+
+// обновляет exports в package.json
+// const updateExports = () => {
+//   const exportsMap = {
+//     ".": {
+//       import: "./dist/index.es.js",
+//       require: "./dist/index.cjs",
+//       types: "./dist/index.d.ts",
+//     },
+//   };
+//   components.forEach((name) => {
+//     exportsMap[`./components/${name}`] = {
+//       import: `./dist/components/${name}.es.js`,
+//       require: `./dist/components/${name}.cjs`,
+//       types: `./dist/components/${name}.d.ts`,
+//     };
+//   });
+
+//   const packageJsonPath = path.resolve(".", "package.json");
+//   let packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
+//   packageJson.exports = exportsMap;
+//   fs.writeFileSync(
+//     packageJsonPath,
+//     JSON.stringify(packageJson, null, 2),
+//     "utf8"
+//   );
+
+//   console.log("Exports updated in package.json");
+// };
 
 const createComponentConfig = (name) => {
   return [
@@ -88,7 +116,8 @@ const createComponentConfig = (name) => {
   ];
 };
 
-updateExports();
+// updateExports();
+updateExportsFile();
 
 export default [
   // === Основная библиотека: uikit ===
