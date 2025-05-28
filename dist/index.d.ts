@@ -3,7 +3,6 @@ import * as _emotion_styled from '@emotion/styled';
 import * as _emotion_react from '@emotion/react';
 import * as antd from 'antd';
 import React, { ReactNode } from 'react';
-import { IInputProps as IInputProps$1 } from '@components/Input';
 
 declare const StyledButton: _emotion_styled.StyledComponent<antd.ButtonProps & React.RefAttributes<HTMLAnchorElement | HTMLButtonElement> & {
     theme?: _emotion_react.Theme;
@@ -23,7 +22,7 @@ declare const StyledTitle: _emotion_styled.StyledComponent<{
     theme?: _emotion_react.Theme;
     as?: React.ElementType;
 }, React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;
-interface ISearchProps extends IInputProps$1 {
+interface ISearchProps extends IInputProps {
     title?: ReactNode;
 }
 declare const Search: ({ title, ...rest }: ISearchProps) => react_jsx_runtime.JSX.Element;

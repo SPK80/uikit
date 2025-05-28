@@ -1,8 +1,12 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import * as _emotion_styled from '@emotion/styled';
 import * as _emotion_react from '@emotion/react';
-import { IInputProps } from '@components/Input';
 import React, { ReactNode } from 'react';
+
+interface IInputProps {
+    value?: string;
+    onChange?: (value: string) => void;
+}
 
 declare const StyledTitle: _emotion_styled.StyledComponent<{
     theme?: _emotion_react.Theme;

@@ -1,4 +1,4 @@
-import { IInputProps, Input } from "@components/Input";
+import { IInputProps, Input } from "../../Input";
 import React, { ReactNode } from "react";
 import styled from "@emotion/styled";
 
