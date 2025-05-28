@@ -13,7 +13,7 @@ const getComponents = () => {
   return fs
     .readdirSync(componentsDir)
     .filter((file) =>
-      fs.statSync(path.join(componentsDir, file)).isDirectory()
+      fs.statSync(path.join(componentsDir, file)).isDirectory(),
     );
 };
 
@@ -32,7 +32,8 @@ const updateExports = () => {
     exportsMap[`./components/${name}`] = {
       import: `./dist/components/${name}.es.js`,
       require: `./dist/components/${name}.cjs`,
-      types: `./dist/components/${name}.d.ts`,
+      // types: `./dist/components/${name}.d.ts`,
+      types: "./dist/index.d.ts",
     };
   });
 
@@ -42,7 +43,7 @@ const updateExports = () => {
   fs.writeFileSync(
     packageJsonPath,
     JSON.stringify(packageJson, null, 2),
-    "utf8"
+    "utf8",
   );
 
   console.log("Exports updated in package.json");
@@ -80,11 +81,11 @@ const createComponentConfig = (name) => {
         }),
       ],
     },
-    {
-      input: `src/components/${name}/index.ts`,
-      output: [{ file: `dist/components/${name}.d.ts`, format: "es" }],
-      plugins: [dts()],
-    },
+    // {
+    //   input: `src/components/${name}/index.ts`,
+    //   output: [{ file: `dist/components/${name}.d.ts`, format: "es" }],
+    //   plugins: [dts()],
+    // },
   ];
 };
 

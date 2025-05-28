@@ -16,21 +16,22 @@
     "./components/Button": {
       "import": "./dist/components/Button.es.js",
       "require": "./dist/components/Button.cjs",
-      "types": "./dist/components/Button.d.ts"
+      "types": "./dist/index.d.ts"
     },
     "./components/Input": {
       "import": "./dist/components/Input.es.js",
       "require": "./dist/components/Input.cjs",
-      "types": "./dist/components/Input.d.ts"
+      "types": "./dist/index.d.ts"
     },
     "./components/Search": {
       "import": "./dist/components/Search.es.js",
       "require": "./dist/components/Search.cjs",
-      "types": "./dist/components/Search.d.ts"
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [
-    "components"
+    "dist/**/*",
+    "README.md"
   ],
   "scripts": {
     "build": "rollup -c"
