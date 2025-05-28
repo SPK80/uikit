@@ -1,13 +1,16 @@
-import React from 'react';
+import React from "react";
 
 export interface IInputProps {
-  value:string
+  value?: string;
+  onChange?: (value: string) => void;
 }
 
-export const Input = (  props :IInputProps) => {
+export const Input = ({ value, onChange, ...rest }: IInputProps) => {
   return (
     <input
-      {...props}
+      value={value}
+      onChange={(e) => onChange?.(e.currentTarget.value)}
+      {...rest}
     />
   );
-}; 
+};

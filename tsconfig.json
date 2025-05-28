@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
+    "moduleResolution": "node",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "strict": true,
     "esModuleInterop": true,
@@ -10,11 +11,15 @@
     "declaration": false, // ❌ выключаем встроенный вывод типов
     "noEmit": true, // ✅ только проверка типов
     "importHelpers": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowJs": true,
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "*": ["node_modules/*"]
+      "@components": ["src/components"],
+      "@components/*": ["src/components/*"]
     }
   },
-  "include": ["src/**/*"]
+  "include": ["src"]
 }

@@ -1,11 +1,17 @@
 import { jsx, jsxs } from 'react/jsx-runtime';
+import styled from '@emotion/styled';
 
-const Input = (props) => {
-    return (jsx("input", { ...props }));
+const Input = ({ value, onChange, ...rest }) => {
+    return (jsx("input", { value: value, onChange: (e) => onChange?.(e.currentTarget.value), ...rest }));
 };
 
-const Search = (props) => {
-    return (jsxs("div", { children: [jsx("span", { children: "\u041F\u043E\u0438\u0441\u043A" }), jsx(Input, { ...props })] }));
+const StyledTitle = styled.div `
+  color: red;
+  font-size: 20px;
+  margin-bottom: 10px;
+`;
+const Search = ({ title = "Поиск", ...rest }) => {
+    return (jsxs("div", { children: [jsx(StyledTitle, { children: title }), jsx(Input, { ...rest })] }));
 };
 
-export { Search };
+export { Search, StyledTitle };

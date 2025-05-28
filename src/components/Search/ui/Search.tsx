@@ -1,16 +1,22 @@
-import React from 'react';
-import {Input} from "../../Input";
+import { IInputProps, Input } from "@components/Input";
+import React, { ReactNode } from "react";
+import styled from "@emotion/styled";
 
-export interface ISearchProps {
-  value:string
+export const StyledTitle = styled.div`
+  color: red;
+  font-size: 20px;
+  margin-bottom: 10px;
+`;
+
+export interface ISearchProps extends IInputProps {
+  title?: ReactNode;
 }
 
-export const Search = ( props :ISearchProps) => {
+export const Search = ({ title = "Поиск", ...rest }: ISearchProps) => {
   return (
-      <div>
-        <span>Поиск</span>
-        <Input
-          {...props}
-      /></div>
+    <div>
+      <StyledTitle>{title}</StyledTitle>
+      <Input {...rest} />
+    </div>
   );
-}; 
+};
