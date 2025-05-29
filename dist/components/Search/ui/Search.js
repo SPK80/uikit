@@ -1,9 +1,6 @@
-import { jsx, jsxs } from 'react/jsx-runtime';
+import { jsxs, jsx } from 'react/jsx-runtime';
+import { Input } from '../../Input/ui/Input.js';
 import styled from '@emotion/styled';
-
-const Input = ({ value, onChange, ...rest }) => {
-    return (jsx("input", { value: value, onChange: (e) => onChange?.(e.currentTarget.value), ...rest }));
-};
 
 const StyledTitle = styled.div `
   color: red;
