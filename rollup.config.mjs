@@ -93,7 +93,7 @@ export default [
     output: [
       // { file: "dist/index.cjs", format: "cjs" },
       // { file: "dist/index.es.js", format: "es" },
-      { file: "dist/index.esm.js", format: "esm" },
+      { file: "dist/index.js", format: "esm" },
     ],
     plugins: [
       peerDepsExternal(),

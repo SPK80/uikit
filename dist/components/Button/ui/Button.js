@@ -1,8 +1,8 @@
 import { jsx } from 'react/jsx-runtime';
 import { Button as Button$1 } from 'antd';
-import newStyled from '../../../node_modules/@emotion/styled/dist/emotion-styled.esm.js';
+import styled from '@emotion/styled';
 
-const StyledButton = newStyled(Button$1) `
+const StyledButton = styled(Button$1) `
   color: red;
   font-size: 20px;
 `;
