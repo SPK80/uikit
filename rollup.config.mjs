@@ -119,11 +119,6 @@ const addJsExtensionToImports = () => ({
 
 export default [
   {
-    input: "src/index.ts",
-    output: [{ file: "dist/index.d.ts", format: "esm" }],
-    plugins: [dts()],
-  },
-  {
     input: `src/index.ts`,
     output: {
       dir: "dist",
@@ -167,5 +162,11 @@ export default [
       }),
     ],
   },
+  {
+    input: "src/index.ts",
+    output: [{ file: "dist/index.d.ts", format: "esm" }],
+    plugins: [dts()],
+  },
+
   // ...components.flatMap(createComponentConfig),
 ];
