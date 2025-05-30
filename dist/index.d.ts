@@ -18,14 +18,15 @@ interface IInputProps {
 }
 declare const Input: ({ value, onChange, ...rest }: IInputProps) => react_jsx_runtime.JSX.Element;
 
-declare const StyledTitle: _emotion_styled.StyledComponent<{
-    theme?: _emotion_react.Theme;
-    as?: React.ElementType;
-}, React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;
-interface ISearchProps extends IInputProps {
+interface ISearchProps$1 extends IInputProps {
     title?: ReactNode;
 }
-declare const Search: ({ title, ...rest }: ISearchProps) => react_jsx_runtime.JSX.Element;
+declare const Search: ({ title, ...rest }: ISearchProps$1) => react_jsx_runtime.JSX.Element;
 
-export { Button, Input, Search, StyledButton, StyledTitle };
-export type { IButtonProps, IInputProps, ISearchProps };
+interface ISearchProps extends IButtonProps {
+    title?: ReactNode;
+}
+declare const Test: ({ title, ...rest }: ISearchProps) => react_jsx_runtime.JSX.Element;
+
+export { Button, Input, Search, StyledButton, Test };
+export type { IButtonProps, IInputProps };

@@ -11,8 +11,16 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./components": {
-      "import": "./dist/components/index.js",
+    "./components/Button": {
+      "import": "./dist/components/Button.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./components/Input": {
+      "import": "./dist/components/Input.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./components/Search": {
+      "import": "./dist/components/Search.js",
       "types": "./dist/index.d.ts"
     }
   },
