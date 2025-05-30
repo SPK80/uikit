@@ -1,4 +1,5 @@
 import React from "react";
+import debounce from "lodash/debounce";
 
 export interface IInputProps {
   value?: string;
@@ -9,7 +10,9 @@ export const Input = ({ value, onChange, ...rest }: IInputProps) => {
   return (
     <input
       value={value}
-      onChange={(e) => onChange?.(e.currentTarget.value)}
+      onChange={debounce((e) => {
+        onChange?.(e.currentTarget.value);
+      }, 1000)}
       {...rest}
     />
   );
