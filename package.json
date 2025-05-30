@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "license": "MIT",
   "description": "A React-based UI library",
-  "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",

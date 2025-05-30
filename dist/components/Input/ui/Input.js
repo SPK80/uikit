@@ -1,5 +1,5 @@
-import { jsx } from 'react/jsx-runtime.js';
-import debounce from 'lodash/debounce.js';
+import { jsx } from 'react/jsx-runtime';
+import debounce from 'lodash/debounce';
 
 const Input = ({ value, onChange, ...rest }) => {
     return (jsx("input", { value: value, onChange: debounce((e) => {

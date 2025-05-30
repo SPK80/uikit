@@ -1,6 +1,6 @@
-import { jsxs, jsx } from 'react/jsx-runtime.js';
+import { jsxs, jsx } from 'react/jsx-runtime';
 import { Input } from '../../Input/ui/Input.js';
-import styled from '@emotion/styled.js';
+import styled from '@emotion/styled';
 
 const StyledTitle = styled.div `
   color: red;

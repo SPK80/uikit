@@ -132,22 +132,12 @@ export default [
       cleaner({ targets: ["./dist/"] }), // удаляем старый билд
       peerDepsExternal(),
       typescript(),
-      // replace({
-      //   // Добавляем .js к строкам импортов
-      //   delimiters: ["", ""],
-      //   values: {
-      //     // Используем регулярное выражение через replace
-      //     // Это заменит все случаи import '...' без .js на .js
-      //     // ВНИМАНИЕ: этот метод может быть грубым, см. ниже
-      //     "from '": "from '",
-      //     "import '": "import '",
-      //     // Можно использовать более точный подход с transform хуком
-      //   },
-      // }),
-
-      resolve(),
+      resolve({
+        browser: true, // для браузерных версий пакетов
+        preferBuiltins: false, // избегаем Node.js-полифилов
+      }),
       commonjs(),
-      addJsExtensionToImports(),
+      // addJsExtensionToImports(),
 
       postcss({
         config: {
