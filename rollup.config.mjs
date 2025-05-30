@@ -56,7 +56,7 @@ const createInput = () => {
   };
 
   components.forEach((name) => {
-    input[name] = `./src/components/${name}/index.ts`;
+    input[`components/${name}`] = `./src/components/${name}/index.ts`;
   });
 
   return input;
