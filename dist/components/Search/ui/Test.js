@@ -11,4 +11,4 @@ const Test = ({ title = "Тест", ...rest }) => {
     return (jsxs("div", { children: [jsx(StyledTitle, { children: title }), jsx(Button, { ...rest })] }));
 };
 
-export { StyledTitle, Test };
+export { Test };

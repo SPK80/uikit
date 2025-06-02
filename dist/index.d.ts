@@ -18,15 +18,15 @@ interface IInputProps {
 }
 declare const Input: ({ value, onChange, ...rest }: IInputProps) => react_jsx_runtime.JSX.Element;
 
-interface ISearchProps$1 extends IInputProps {
+interface ISearchProps extends IInputProps {
     title?: ReactNode;
 }
-declare const Search: ({ title, ...rest }: ISearchProps$1) => react_jsx_runtime.JSX.Element;
+declare const Search: ({ title, ...rest }: ISearchProps) => react_jsx_runtime.JSX.Element;
 
-interface ISearchProps extends IButtonProps {
+interface ITestProps extends IButtonProps {
     title?: ReactNode;
 }
-declare const Test: ({ title, ...rest }: ISearchProps) => react_jsx_runtime.JSX.Element;
+declare const Test: ({ title, ...rest }: ITestProps) => react_jsx_runtime.JSX.Element;
 
 export { Button, Input, Search, StyledButton, Test };
-export type { IButtonProps, IInputProps };
+export type { IButtonProps, IInputProps, ISearchProps, ITestProps };

@@ -2,7 +2,7 @@ import { IInputProps, Input } from "../../Input";
 import React, { ReactNode } from "react";
 import styled from "@emotion/styled";
 
-export const StyledTitle = styled.div`
+const StyledTitle = styled.div`
   color: red;
   font-size: 20px;
   margin-bottom: 10px;

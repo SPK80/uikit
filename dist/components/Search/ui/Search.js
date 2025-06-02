@@ -11,4 +11,4 @@ const Search = ({ title = "Поиск", ...rest }) => {
     return (jsxs("div", { children: [jsx(StyledTitle, { children: title }), jsx(Input, { ...rest })] }));
 };
 
-export { Search, StyledTitle };
+export { Search };
